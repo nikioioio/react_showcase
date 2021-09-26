@@ -1,8 +1,9 @@
 import {useState, useEffect} from 'react';
 import { API_URL, API_KEY } from '../config';
-import {Preloader} from './Preloader';
-import {GoogsList} from './GoodsList';
-import {Cart} from './Cart'
+import { Preloader } from './Preloader';
+import { GoogsList } from './GoodsList';
+import { Cart } from './Cart';
+import { BasketList } from './BasketList';
 
 
 export const Shop = () => {
@@ -10,7 +11,8 @@ export const Shop = () => {
     const [goods, setGoods] = useState([]);
     const [loading, setLoading] = useState(true);
     const [order, setOrder] = useState([]);
-    const [uniqOrder, setUniqOrder] = useState(0)
+    const [isBasketShow, setBasketShow] = useState(false);
+    const [quantity, setQuantity] = useState(1);
 
 
 
@@ -30,21 +32,49 @@ export const Shop = () => {
     }, [] )
 
     const insertOrder = (id) => {
+        const itemIndex = order.findIndex(product => product.id === id);
         const addOrder = goods.filter(product => product.id === id );
-        setOrder([...order, addOrder[0]])
+
+        if (itemIndex < 0) {
+            const addProduct = {
+                ...addOrder[0],
+                quantity: 1
+            }
+            setOrder([...order, addProduct])
+        }else {
+            const replaceOrder = {
+                ...order[itemIndex],
+                quantity: order[itemIndex].quantity +1,
+            }
+            order[itemIndex] = replaceOrder;
+            setOrder(order)
+        }
+
+        let sumEl = 0;
+        order.forEach(item => {
+            sumEl = sumEl+  item.quantity
+        });
+
+        setQuantity(sumEl);
+
     }
 
-    useEffect(() => {
-        setUniqOrder([...new Set(order.map(product => product.id))].length)
-    },[order])
+
+
+    const handleBasketShow = () => {
+        setBasketShow(!isBasketShow);
+    }
 
 
 
     return (
         <main className="container content">
-            <Cart quantity={uniqOrder}/>
+            <Cart handleBasketShow={handleBasketShow} quantity={order.length}/>
             {
                loading ? <Preloader/>: <GoogsList goods={goods} insertOrder={insertOrder}/>
+            }
+            {
+                isBasketShow && <BasketList order={order} handleBasketShow={handleBasketShow}/>
             }
         </main>
     )
