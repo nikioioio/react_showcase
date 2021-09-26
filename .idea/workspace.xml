@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0acc81d-86ba-485f-9537-b448b6027d19" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Alert.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BasketItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BasketItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/BasketList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BasketList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GoodsItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GoodsItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GoodsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GoodsList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Shop.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Shop.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
@@ -58,7 +58,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1632471368054</updated>
-      <workItem from="1632471369194" duration="29536000" />
+      <workItem from="1632471369194" duration="38609000" />
     </task>
     <task id="LOCAL-00001" summary="Сделал шаблон, добавил корзину, загрузил товары.">
       <created>1632542045484</created>
@@ -74,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632631167175</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="имплементация логики точечного удаления и добавления товаров в корзине">
+      <created>1632638421912</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1632638421912</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,6 +101,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Сделал шаблон, добавил корзину, загрузил товары." />
     <MESSAGE value="Имплементация логики корзины, добавления в нее товаров." />
-    <option name="LAST_COMMIT_MESSAGE" value="Имплементация логики корзины, добавления в нее товаров." />
+    <MESSAGE value="имплементация логики точечного удаления и добавления товаров в корзине" />
+    <option name="LAST_COMMIT_MESSAGE" value="имплементация логики точечного удаления и добавления товаров в корзине" />
   </component>
 </project>

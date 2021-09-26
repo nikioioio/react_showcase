@@ -26,7 +26,9 @@ export const BasketList = (props) => {
                 )):<li className="collection-item">Корзина пуста</li>
             }
 
-            <li className="collection-item active">Общая стоимость {getSum()} руб.</li>
+            <li className="collection-item active">Общая стоимость {getSum()} руб.
+            <button className='secondary-content btn-small'>Заказ</button> </li>
+
         </ul>
     )
 }

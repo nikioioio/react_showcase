@@ -4,6 +4,7 @@ import { Preloader } from './Preloader';
 import { GoogsList } from './GoodsList';
 import { Cart } from './Cart';
 import { BasketList } from './BasketList';
+import { Alert } from './Alert';
 
 
 export const Shop = () => {
@@ -13,6 +14,7 @@ export const Shop = () => {
     const [order, setOrder] = useState([]);
     const [isBasketShow, setBasketShow] = useState(false);
     const [quantity, setQuantity] = useState(1);
+    const [nameToast, setNameToast] = useState('');
 
 
 
@@ -51,6 +53,7 @@ export const Shop = () => {
         }
 
         setQuantity( order.reduce((sum, item) => (sum+  item.quantity),0) );
+        setNameToast(addOrder[0].name)
     }
 
 
@@ -79,7 +82,9 @@ export const Shop = () => {
 
     }
 
-
+    const clearToast = () => {
+        setNameToast('');
+    }
 
     const removeFromBasketAllProduct  = (id) => {
         setOrder(order.filter(item => item.id !== id))
@@ -95,6 +100,10 @@ export const Shop = () => {
         <main className="container content">
             <Cart handleBasketShow={handleBasketShow} quantity={order.length}/>
             {
+               nameToast && <Alert nameToast={nameToast} clearToast={clearToast}/>
+            }
+
+            {
                loading ? <Preloader/>: <GoogsList goods={goods} addToBasket={addToBasket}/>
             }
             {
@@ -106,6 +115,8 @@ export const Shop = () => {
                     addToBasket={addToBasket}
                 />
             }
+
+
         </main>
     )
 }
