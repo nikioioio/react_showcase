@@ -31,9 +31,9 @@ export const Shop = () => {
 
     }, [] )
 
-    const insertOrder = (id) => {
+    const addToBasket = (id) => {
         const itemIndex = order.findIndex(product => product.id === id);
-        const addOrder = goods.filter(product => product.id === id );
+        const addOrder = goods.filter(product => product.id === id);
 
         if (itemIndex < 0) {
             const addProduct = {
@@ -41,25 +41,49 @@ export const Shop = () => {
                 quantity: 1
             }
             setOrder([...order, addProduct])
-        }else {
+        } else {
             const replaceOrder = {
                 ...order[itemIndex],
-                quantity: order[itemIndex].quantity +1,
+                quantity: order[itemIndex].quantity + 1,
             }
             order[itemIndex] = replaceOrder;
             setOrder(order)
         }
 
-        let sumEl = 0;
-        order.forEach(item => {
-            sumEl = sumEl+  item.quantity
-        });
+        setQuantity( order.reduce((sum, item) => (sum+  item.quantity),0) );
+    }
 
-        setQuantity(sumEl);
+
+    const removeFromBasket = (id) => {
+        const itemIndex = order.findIndex(product => product.id === id);
+        if (order[itemIndex].quantity === 1) {
+
+            if (!order.length) {
+                setOrder([]);
+                return;
+            }
+
+            setOrder(order.filter(el => el.id !== id));
+
+        }else {
+
+            const replaceOrder = {
+                ...order[itemIndex],
+                quantity: order[itemIndex].quantity -1,
+            }
+            order[itemIndex] = replaceOrder;
+            setOrder(order)
+        }
+
+        setQuantity( order.reduce((sum, item) => (sum+  item.quantity),0) );
 
     }
 
 
+
+    const removeFromBasketAllProduct  = (id) => {
+        setOrder(order.filter(item => item.id !== id))
+    }
 
     const handleBasketShow = () => {
         setBasketShow(!isBasketShow);
@@ -71,10 +95,16 @@ export const Shop = () => {
         <main className="container content">
             <Cart handleBasketShow={handleBasketShow} quantity={order.length}/>
             {
-               loading ? <Preloader/>: <GoogsList goods={goods} insertOrder={insertOrder}/>
+               loading ? <Preloader/>: <GoogsList goods={goods} addToBasket={addToBasket}/>
             }
             {
-                isBasketShow && <BasketList order={order} handleBasketShow={handleBasketShow}/>
+                isBasketShow && <BasketList
+                    order={order}
+                    handleBasketShow={handleBasketShow}
+                    removeFromBasketAllProduct={removeFromBasketAllProduct}
+                    removeFromBasket={removeFromBasket}
+                    addToBasket={addToBasket}
+                />
             }
         </main>
     )

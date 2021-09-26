@@ -1,7 +1,7 @@
 import {GoodsItem} from './GoodsItem'
 
 export const GoogsList = (props) => {
-    const {goods = [],insertOrder} = props;
+    const {goods = [],addToBasket} = props;
 
 
     if (!goods.length) {
@@ -16,7 +16,7 @@ export const GoogsList = (props) => {
         <>
         <div className="wrapper">
             {
-                goods.map(good=> <GoodsItem key={good.id} insertOrder={insertOrder} {...good}/>)
+                goods.map(good=> <GoodsItem key={good.id} addToBasket={addToBasket} {...good}/>)
             }
         </div>
         </>

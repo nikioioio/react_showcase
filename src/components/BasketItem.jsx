@@ -6,13 +6,21 @@ export const BasketItem = (props) => {
         name,
         price,
         quantity,
+        removeFromBasketAllProduct,
+        removeFromBasket,
+        addToBasket
+
     } = props;
 
 
     return (
         <li className="collection-item">
-            {name} x {quantity} = {price}
-            <button className="secondary-content"><i className="material-icons">clear</i></button>
+            {name} x
+            <span>  <i onClick={() => removeFromBasket(id)} className="material-icons basket-add-remove">remove</i>    </span>
+            {quantity}
+            <span>  <i onClick={() => addToBasket(id)}  className="material-icons basket-add-remove">add</i>   </span>
+            = {quantity * price}
+            <a className="secondary-content"><i onClick={() => removeFromBasketAllProduct(id)} className="material-icons basket-item-close">clear</i></a>
         </li>
     )
 }

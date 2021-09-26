@@ -1,5 +1,5 @@
 export const GoodsItem = (props) => {
-    const {image, name, full_background, id, description, price,insertOrder} = props;
+    const {image, name, full_background, id, description, price, addToBasket} = props;
 
 
     return(
@@ -23,7 +23,7 @@ export const GoodsItem = (props) => {
                 <div className="card-action">
                     <span className="right" style={{fontSize: '1.8rem'}}>{price} </span>
                     <button onClick={() => {
-                        insertOrder(id)
+                        addToBasket(id)
                     }} className="btn">Купить</button>
                 </div>
             </div>
