@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0acc81d-86ba-485f-9537-b448b6027d19" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Alert.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/context.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Alert.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Alert.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BasketItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BasketItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/BasketList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BasketList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GoodsItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GoodsItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GoodsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GoodsList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Shop.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Shop.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1632471368054</updated>
-      <workItem from="1632471369194" duration="38609000" />
+      <workItem from="1632471369194" duration="53478000" />
     </task>
     <task id="LOCAL-00001" summary="Сделал шаблон, добавил корзину, загрузил товары.">
       <created>1632542045484</created>
@@ -81,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632638421912</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="сообщение о добавленном товаре">
+      <created>1632672115932</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1632672115932</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +113,7 @@
     <MESSAGE value="Сделал шаблон, добавил корзину, загрузил товары." />
     <MESSAGE value="Имплементация логики корзины, добавления в нее товаров." />
     <MESSAGE value="имплементация логики точечного удаления и добавления товаров в корзине" />
-    <option name="LAST_COMMIT_MESSAGE" value="имплементация логики точечного удаления и добавления товаров в корзине" />
+    <MESSAGE value="сообщение о добавленном товаре" />
+    <option name="LAST_COMMIT_MESSAGE" value="сообщение о добавленном товаре" />
   </component>
 </project>

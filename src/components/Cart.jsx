@@ -1,6 +1,9 @@
-export const Cart = (props) => {
+import { ShopContext } from './context';
+import { useContext } from 'react';
 
-    const {quantity = 0, handleBasketShow = Function.prototype} = props;
+export const Cart = () => {
+    const {order,handleBasketShow} = useContext(ShopContext);
+    const quantity = order.length;
 
     return (
         <div onClick={handleBasketShow} className="cart blue darken-4 white-text">

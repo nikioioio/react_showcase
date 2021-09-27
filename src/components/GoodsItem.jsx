@@ -1,5 +1,10 @@
+import { ShopContext } from './context';
+import {useContext} from "react";
+
+
 export const GoodsItem = (props) => {
-    const {image, name, full_background, id, description, price, addToBasket} = props;
+    const {addToBasket} = useContext(ShopContext);
+    const {image, name, full_background, id, description, price} = props;
 
 
     return(

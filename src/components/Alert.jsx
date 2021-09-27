@@ -1,8 +1,10 @@
-import {useEffect} from 'react';
-import {CSSTransitionGroup} from 'react-transition-group';
+import {useEffect, useContext} from 'react';
+import { ShopContext } from './context';
+
 
 export const Alert = (props) => {
-    const {nameToast, clearToast} = props;
+    const {clearToast} = useContext(ShopContext);
+    const {nameToast} = props;
 
     useEffect(() => {
 
